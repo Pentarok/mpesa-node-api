@@ -3,7 +3,7 @@ const axios = require("axios")
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer')
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const ResetToken = require('../models/ResetPasswordToken')
 const UserModel = require('../models/User');
 exports.createUser = async (req,res)=>{
@@ -323,7 +323,8 @@ exports.FinalizeResetPassword= async (req,res)=>{
 exports.getAccessToken = async ()=> {
   const consumer_key = process.env.CONSUMER_KEY;
   const consumer_secret = process.env.CONSUMER_SECRET;
-  const url=  "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials";
+  const url =  "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials";
+
   const auth =
     "Basic " +
     new Buffer.from(consumer_key + ":" + consumer_secret).toString("base64");
