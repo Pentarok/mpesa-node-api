@@ -32,6 +32,7 @@ router.post('/add-income',addIncome)
                     const url =
                       "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest";
                     const auth = "Bearer " + accessToken;
+                    const callback=process.env.CALLBACK_URL;
                     const timestamp = moment().format("YYYYMMDDHHmmss");
                     const password = new Buffer.from(
                       "174379" +
@@ -51,7 +52,7 @@ router.post('/add-income',addIncome)
                           PartyA: "254705670506", //phone number to receive the stk push
                           PartyB: "174379",
                           PhoneNumber: "254705670506",
-                          CallBackURL: "https://mydomain.com/pat",
+                          CallBackURL:callback,
                           AccountReference: "FinNance",
                           TransactionDesc: "Mpesa Daraja API stk push test",
                         },
