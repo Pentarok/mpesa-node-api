@@ -7,7 +7,7 @@ const {db}= require('./db/db')
 const app = express();
 app.use(express.json());
 app.use(cors({
-    origin:"https://expense-app-client-two.vercel.app",
+    origin:"https://expense-app-client-git-main-mak-pentaroks-projects.vercel.app",
     methods:["GET","POST","DELETE"],
     credentials:true
 }))
