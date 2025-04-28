@@ -5,7 +5,7 @@ const User = require('../models/User')
 const {addIncome, getIncomes, deleteIncome}= require('../Controllers/AddIncome');
 const { addExpense, getExpense, deleteExpense } = require("../Controllers/Expenses");
 const { addSaving, getSavings, deleteSaving } = require("../Controllers/Saving");
-const { verifyUser, signUp, signInUser, AuthVerify, LogoutUser, UpdateUser, fetchUserData, ResetPassword, FinalizeResetPassword,getAccessToken, StkPush, Initiate, handleCallBack, handleAccountDeletion, UserTransactions, ExpenseCap, BalanceCap,Limits, resetBalanceCap, resetExpenseCap } = require("../Controllers/User");
+const { verifyUser, signUp, signInUser, AuthVerify, LogoutUser, UpdateUser, fetchUserData, ResetPassword, FinalizeResetPassword,getAccessToken, StkPush, Initiate, handleCallBack, handleAccountDeletion, UserTransactions, ExpenseCap, BalanceCap,Limits, resetBalanceCap, resetExpenseCap, SendMessage } = require("../Controllers/User");
 
 router.post('/add-income',addIncome)
             .get('/get-incomes/:id',getIncomes)
@@ -58,7 +58,7 @@ router.post('/add-income',addIncome)
             .post('/resetBalance',resetBalanceCap)
             .post('/resetExpense',resetExpenseCap)
             .delete('/delete-income/:id',deleteIncome)
-            .post('/message')
+            .post('/message',SendMessage)
             .post('/add-saving',addSaving)
             .get('/get-savings/:id',getSavings)
             .delete('/delete-saving/:id',deleteSaving)
