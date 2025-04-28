@@ -10,7 +10,7 @@
       {
         "src": "/(.*)",
         "headers": {
-          "Access-Control-Allow-Origin": "https://expense-app-client-9eecad664-mak-pentaroks-projects.vercel.app",
+          "Access-Control-Allow-Origin": "https://expense-app-client-omega.vercel.app",
           "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
           "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept, Authorization",
           "Access-Control-Allow-Credentials": "true"
