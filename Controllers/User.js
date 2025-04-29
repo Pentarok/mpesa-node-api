@@ -408,7 +408,7 @@ exports.Initiate = async (req, res) => {
     const { phonNumber,userId} = req.body;
     console.log(userId)
     const accessToken = await getAccessToken();
-    const stkResponse = await StkPush(accessToken,phonNumber,userId, "1");
+    const stkResponse = await StkPush(accessToken,phonNumber,userId, "100");
 
     res.json({ success: true, stkResponse });
   } catch (error) {
